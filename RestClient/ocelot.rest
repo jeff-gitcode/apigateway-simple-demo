@@ -1,0 +1,5 @@
+@host = http://localhost:5165/gateway
+
+# @name WeatherForecast
+GET {{host}}/WeatherForecast HTTP/1.1
+content-type: application/json
