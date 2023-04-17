@@ -13,11 +13,11 @@ Tech Stack
 
 ## Simple api
 
-![alt text](./doc/doc/webapi-demo.jpg)
+![alt text](./doc/webapi-demo.jpg)
 
 ## Ocelot
 
-![alt text](./doc/doc/ocelot-demo.jpg)
+![alt text](./doc/ocelot-demo.jpg)
 
 ```javascript
 $ dotnet new sln -o apigateway-simple-demo
