@@ -2,14 +2,14 @@ Api Gateay Simple Demo
 
 Tech Stack
 
-[x] Routing
-[x] Ocelot
-[] YARP
-[] Rate Limiting
-[] Caching /SPAN
-[] Retry policies / QoS
-[] Load Balancing
-[] Logging
+- [x] Routing
+- [x] Ocelot
+- [ ] YARP
+- [ ] Rate Limiting
+- [ ] Caching /SPAN
+- [ ] Retry policies / QoS
+- [ ] Load Balancing
+- [ ] Logging
 
 ## Simple api
 
