@@ -1,4 +1,4 @@
-@host = http://localhost:5165/gateway
+@host = https://localhost:7261/gateway
 
 # @name WeatherForecast
 GET {{host}}/WeatherForecast HTTP/1.1
