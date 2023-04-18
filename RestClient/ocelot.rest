@@ -1,5 +1,15 @@
-@host = https://localhost:7261/gateway
-
-# @name WeatherForecast
-GET {{host}}/WeatherForecast HTTP/1.1
+### WeatherForecast
+GET {{$dotenv API_GATEWAY_URL}}/WeatherForecast HTTP/1.1
 content-type: application/json
+
+### test
+GET http://localhost:5080/ HTTP/1.1
+content-type: application/json
+
+### @name http://localhost:5080/secret
+GET http://localhost:5080/secret HTTP/1.1
+Accept: */*
+content-type: application/json
+# Connection: keep-alive
+# Host: localhost:5080
+Authorization: Bearer {{$dotenv TOKEN}}

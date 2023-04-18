@@ -39,7 +39,31 @@ $ dotnet new webapi -o Ocelot.ApiGateway
 $ dotnet sln add .\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj
 
 # add api gateway package
-dotnet add .\Ocelot.ApiGateway\ package Ocelot
+$ dotnet add .\Ocelot.ApiGateway\ package Ocelot
 
 # setup ocelot.json for downstream(webapi) and upstream(ocelot)
+
+# run ocelot
+$ dotnet run --project .\Ocelot.ApiGateway\
+
+# authentication
+$ dotnet add  .\Ocelot.ApiGateway\ package Microsoft.AspNetCore.Authentication.JwtBearer
+
+# check current sdk
+dotnet --list-sdks
+
+# check user-jwts
+$ dotnet user-jwts
+
+# generate token base on jwt confi
+$ dotnet user-jwts create --name 'demo' --audience 'jeff.chen' --scope 'demo:secrets'
+
+# decode token
+https://jwt.ms/
+
+# token list
+$ dotnet user-jwts list
+
+# clear token
+$ dotnet user-jwts clear
 ```

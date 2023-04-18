@@ -1,5 +1,7 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot(builder.Configuration);
 
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication().AddJwtBearer();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -31,5 +35,17 @@ app.MapControllers();
 
 // Add ocelot middleware
 await app.UseOcelot();
+
+// // Minimal public api
+// app.MapGet("/", () => "Hello, World!");
+
+// // Protected endpoint ~/secret with JWT and scope=demo:secrets required policy
+// app.MapGet("/secret",
+//     () => "This is a secure content!")
+//     .RequireAuthorization(
+//         policy => policy.RequireClaim("scope", "demo:secrets"));
+
+// // app.MapGet("/secret", (ClaimsPrincipal user) => $"Hello {user.Identity?.Name}. My secret")
+// //     .RequireAuthorization();
 
 app.Run();
