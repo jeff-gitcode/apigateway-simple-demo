@@ -2,14 +2,17 @@ Api Gateay Simple Demo
 
 Tech Stack
 
-- [x] Routing
 - [x] Ocelot
 - [ ] YARP
-- [ ] Rate Limiting
-- [ ] Caching /SPAN
+- [x] Routing
+- [x] Authentication
+- [x] Rate Limiting
+- [x] Caching /SPAN
 - [ ] Retry policies / QoS
 - [ ] Load Balancing
 - [ ] Logging
+- [x] Rest Api
+- [x] Minimal Api
 
 ## Simple api
 
@@ -22,9 +25,20 @@ Tech Stack
 ```javascript
 $ dotnet new sln -o apigateway-simple-demo
 
+# setup webapi
 $ dotnet new webapi -o Presentation.WebApi
 
 $ dotnet sln add .\Presentation.WebApi\Presentation.WebApi.csproj
+
+# setup minimal api
+$ dotnet new web -n Minimal.Api
+
+# add carter
+$ dotnet add .\Minimal.Api\ package carter
+
+$ dotnet sln add .\Minimal.Api\Minimal.Api.csproj
+
+$ dotnet add .\Minimal.Api\ package Microsoft.Extensions.Configuration.Json
 
 $ dotnet build
 
@@ -48,6 +62,9 @@ $ dotnet run --project .\Ocelot.ApiGateway\
 
 # authentication
 $ dotnet add  .\Ocelot.ApiGateway\ package Microsoft.AspNetCore.Authentication.JwtBearer
+
+# cache
+$ dotnet add  .\Ocelot.ApiGateway\ package Ocelot.Cache.CacheManager
 
 # check current sdk
 dotnet --list-sdks

@@ -1,0 +1,14 @@
+# @host = https://localhost:7291
+@host = http://localhost:5122/minimal
+
+### @name hello world
+GET {{host}}/ HTTP/1.1
+content-type: application/json
+
+### @name get posts
+GET {{host}}/posts HTTP/1.1
+content-type: application/json
+
+### @name get users
+GET {{host}}/users HTTP/1.1
+content-type: application/json

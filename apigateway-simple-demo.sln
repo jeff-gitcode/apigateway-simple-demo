@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation.WebApi", "Pres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocelot.ApiGateway", "Ocelot.ApiGateway\Ocelot.ApiGateway.csproj", "{051DCFA4-0E77-442A-99A2-6745067618A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal.Api", "Minimal.Api\Minimal.Api.csproj", "{853B8E64-4A31-4BE1-8181-C9297D054200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{051DCFA4-0E77-442A-99A2-6745067618A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051DCFA4-0E77-442A-99A2-6745067618A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051DCFA4-0E77-442A-99A2-6745067618A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{853B8E64-4A31-4BE1-8181-C9297D054200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853B8E64-4A31-4BE1-8181-C9297D054200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853B8E64-4A31-4BE1-8181-C9297D054200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853B8E64-4A31-4BE1-8181-C9297D054200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

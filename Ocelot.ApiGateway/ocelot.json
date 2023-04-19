@@ -4,16 +4,55 @@
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/WeatherForecast",
+      "UpstreamPathTemplate": "/gateway/api/{everything}",
       "UpstreamHttpMethod": ["Get"],
-      "DownstreamPathTemplate": "/api/WeatherForecast",
+      "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
           "Port": 7081
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 5,
+        "Region": "somename"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/minimal/{everything}",
+      "UpstreamHttpMethod": ["Get"],
+      "DownstreamPathTemplate": "/minimal/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7291
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
     }
-  ]
+  ],
+  "RateLimitOptions": {
+    "ClientWhitelist": [],
+    "EnableRateLimiting": true,
+    "Period": "5s",
+    "PeriodTimespan": 1,
+    "Limit": 1,
+    "HttpStatusCode": 429
+  }
 }

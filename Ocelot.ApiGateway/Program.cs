@@ -2,12 +2,15 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
+using Ocelot.Cache.CacheManager;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add ocelot configuration
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-builder.Services.AddOcelot(builder.Configuration);
+
+builder.Services.AddOcelot(builder.Configuration)
+    .AddCacheManager(x => x.WithDictionaryHandle());
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication().AddJwtBearer();

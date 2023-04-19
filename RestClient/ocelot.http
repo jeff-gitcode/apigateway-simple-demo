@@ -1,0 +1,30 @@
+### WeatherForecast (without auth)
+GET {{$dotenv API_GATEWAY_URL}}/api/WeatherForecast HTTP/1.1
+content-type: application/json
+
+### WeatherForecast (with auth)
+GET {{$dotenv API_GATEWAY_URL}}/api/WeatherForecast HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
+
+### Minimal api - get posts (with auth /rate limiting)
+GET {{$dotenv API_GATEWAY_URL}}/minimal/posts HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
+
+### Minimal api - get users (with auth /rate limiting)
+GET {{$dotenv API_GATEWAY_URL}}/minimal/users HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$dotenv TOKEN}}
+
+### test
+GET http://localhost:5080/ HTTP/1.1
+content-type: application/json
+
+### @name http://localhost:5080/secret
+GET http://localhost:5080/secret HTTP/1.1
+Accept: */*
+content-type: application/json
+# Connection: keep-alive
+# Host: localhost:5080
+Authorization: Bearer {{$dotenv TOKEN}}
