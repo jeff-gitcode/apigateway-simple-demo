@@ -1,0 +1,43 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: apigateway-simple-demo
+services:
+- name: presentation-webapi
+  project: Presentation.WebApi/Presentation.WebApi.csproj
+  bindings:
+    # - autoAssignPort: false
+  # - name: presentation-webapi-http
+  #   protocol: http
+  #   port: 5166
+  - protocol: https
+    port: 7081
+# - name: ocelot-apigateway
+#   project: Ocelot.ApiGateway/Ocelot.ApiGateway.csproj
+#   bindings:
+# #   - name: ocelot-apigateway-http
+# #     protocol: http
+# #     port: 5081
+# #   - name: ocelot-apigateway-https
+#   - protocol: https
+#     port: 7261
+# - name: minimal-api
+#   project: Minimal.Api/Minimal.Api.csproj
+#   bindings:
+# #   - name: minimal-api-http
+# #     port: 5122
+# #     protocol: http
+# #   - name: minimal-api-https
+#   - protocol: https
+#     port: 7291
+- name: yarp-apigateway
+  project: Yarp.ApiGateway/Yarp.ApiGateway.csproj
+  bindings:
+  # - name: http
+  #   port: 5122
+  #   protocol: http
+  - protocol: https
+    port: 7256

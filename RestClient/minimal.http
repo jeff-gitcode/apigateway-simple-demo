@@ -1,5 +1,5 @@
 # @host = https://localhost:7291
-@host = http://localhost:5122/minimal
+@host = https://localhost:7291/minimal
 
 ### @name hello world
 GET {{host}}/ HTTP/1.1

@@ -3,7 +3,7 @@ Api Gateay Simple Demo
 Tech Stack
 
 - [x] Ocelot
-- [ ] YARP
+- [x] YARP
 - [x] Routing
 - [x] Authentication
 - [x] Rate Limiting
@@ -13,6 +13,7 @@ Tech Stack
 - [ ] Logging
 - [x] Rest Api
 - [x] Minimal Api
+- [x] TYE
 
 ## Simple api
 
@@ -47,7 +48,7 @@ $ dotnet run --project .\Presentation.WebApi\
 # run swagger
 http://localhost:5166/swagger/index.html
 
-# add api gateway project
+# add ocelot api gateway project
 $ dotnet new webapi -o Ocelot.ApiGateway
 
 $ dotnet sln add .\Ocelot.ApiGateway\Ocelot.ApiGateway.csproj
@@ -83,4 +84,31 @@ $ dotnet user-jwts list
 
 # clear token
 $ dotnet user-jwts clear
+
+# add Yarp api gateway project
+$ dotnet new webapi -o Yarp.ApiGateway
+
+# add to sln
+$ dotnet sln add .\Yarp.ApiGateway\Yarp.ApiGateway.csproj
+
+# add yarp package
+$ dotnet add .\Yarp.ApiGateway\ package Yarp.ReverseProxy
+
+# add tye
+$ dotnet tool install --global Microsoft.Tye --version 0.11.0-alpha.22111.1
+
+# init tye
+$ tye init
+
+# tye run Is a Single Command Running All Services
+$ tye run
+
+# tye debug
+$ tye run --debug backend
+
+# tye docker
+$ tye run --docker
+
+# tye deploy
+# tye deploy --interactive
 ```
