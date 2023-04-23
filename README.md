@@ -3,7 +3,7 @@ Api Gateay Simple Demo
 Tech Stack
 
 - [x] Ocelot
-- [x] YARP
+- [x] YARP (Reverse Proxy)
 - [x] Routing
 - [x] Authentication
 - [x] Rate Limiting
