@@ -24,15 +24,15 @@ services:
 # #   - name: ocelot-apigateway-https
 #   - protocol: https
 #     port: 7261
-# - name: minimal-api
-#   project: Minimal.Api/Minimal.Api.csproj
-#   bindings:
+- name: minimal-api
+  project: Minimal.Api/Minimal.Api.csproj
+  bindings:
 # #   - name: minimal-api-http
-# #     port: 5122
-# #     protocol: http
+  # - protocol: http
+  #   port: 5122
 # #   - name: minimal-api-https
-#   - protocol: https
-#     port: 7291
+  - protocol: https
+    port: 7291
 - name: yarp-apigateway
   project: Yarp.ApiGateway/Yarp.ApiGateway.csproj
   bindings:

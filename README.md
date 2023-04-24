@@ -9,11 +9,15 @@ Tech Stack
 - [x] Rate Limiting
 - [x] Caching /SPAN
 - [ ] Retry policies / QoS
-- [ ] Load Balancing
+- [x] Load Balancing
 - [ ] Logging
 - [x] Rest Api
 - [x] Minimal Api
 - [x] TYE
+- [ ] GRPC
+- [ ] LettecyEncrypt
+- [ ] Service Fabric
+- [ ] WebSocket
 
 ## Simple api
 
